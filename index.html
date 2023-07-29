@@ -4,8 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="data.js" />
     <title>Weather App</title>
   </head>
+
+  <script>
+    // const apikey = "bdd71130301ebe15247b9e1d6b4b9e7c";
+    // const apiUrl =
+    //   "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=sydney";
+
+    const apiUrl =
+      "https://api.openweathermap.org/data/2.5/weather?q=sydney&appid=bdd71130301ebe15247b9e1d6b4b9e7c&units=metric";
+
+    async function checkWeather() {
+      const response = await fetch(apiUrl);
+      var data = await response.json();
+
+      console.log(data);
+    }
+
+    checkWeather();
+  </script>
   <body>
     <div class="container">
       <div class="search">

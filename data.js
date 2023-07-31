@@ -1,11 +1,12 @@
 const apikey = "bdd71130301ebe15247b9e1d6b4b9e7c";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+const apiUrl =
+  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=helsinki";
 
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
+// const searchBox = document.querySelector(".search input");
+// const searchBtn = document.querySelector(".search button");
 
-async function checkWeather(city) {
-  const response = await fetch(apiUrl + city + `&appid=${apikey}`);
+async function checkWeather() {
+  const response = await fetch(apiUrl + `&appid=${apikey}`);
   var data = await response.json();
 
   document.querySelector(".city").innerHTML = data.name;
@@ -18,6 +19,7 @@ async function checkWeather(city) {
 
 console.log("JavaScript is running!"); // Add this line to check if the script is executing
 
-searchBtn?.addEventListener("click", () => {
-  checkWeather(searchBox.value);
-});
+// searchBtn?.addEventListener("click", () => {
+//   checkWeather(searchBox.value);
+// });
+checkWeather();
